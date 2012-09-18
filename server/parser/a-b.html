@@ -1,0 +1,102 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<LINK href="diff-s.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="nav-div.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+</head>
+<body>
+<div id="left" class="src">
+<pre>
+<a id='leftstart' tid='rightstart'></a>
+<a id='35' tid='36' class='m'>var</a> <a id='37' tid='38' class='m'>InheritFrom</a> <a id='39' tid='40' class='m'>=</a> <a id='41' tid='42' class='m'>function</a>(<a id='43' tid='44' class='m'>superClass</a>, <a id='45' tid='46' class='m'>subClass</a>) {
+  <a id='47' tid='48' class='m'>function</a> <a id='49' tid='50' class='m'>inheritance</a>() { }
+  <a id='51' tid='52' class='m'>inheritance</a>.<a id='53' tid='54' class='m'>prototype</a> <a id='55' tid='56' class='m'>=</a> <a id='57' tid='58' class='m'>superClass</a>.<a id='59' tid='60' class='m'>prototype</a>;
+  
+  <a id='61' tid='62' class='m'>subClass</a>.<a id='63' tid='64' class='m'>prototype</a> <a id='65' tid='66' class='m'>=</a> <a id='67' tid='68' class='m'>new</a> <a id='69' tid='70' class='m'>inheritance</a>();
+  <a id='71' tid='72' class='m'>subClass</a>.<a id='73' tid='74' class='m'>prototype</a>.<a id='75' tid='76' class='m'>constructor</a> <a id='77' tid='78' class='m'>=</a> <a id='79' tid='80' class='m'>subClass</a>;
+  <a id='81' tid='82' class='m'>subClass</a>.<a id='83' tid='84' class='m'>baseConstructor</a> <a id='85' tid='86' class='m'>=</a> <a id='87' tid='88' class='m'>superClass</a>;
+  <a id='89' tid='90' class='m'>subClass</a>.<a id='91' tid='92' class='m'>prototype</a>.<a id='93' tid='94' class='m'>superClass</a> <a id='95' tid='96' class='m'>=</a> <a id='97' tid='98' class='m'>superClass</a>.<a id='99' tid='100' class='m'>prototype</a>;
+};
+
+(<span class='d'>function</span> <span class='d'>foo</span>() {
+  <span class='d'>var foo = 1;</span>
+  <span class='d'>var coo = 42;</span>
+  <span class='d'>var doo = &quot;bar&quot;;</span>
+
+  <a id='23' tid='24' class='m'>function</a> <a id='25' tid='26' class='m'>Boo</a>() {
+    <a id='27' tid='28' class='m'>this</a>.<a id='29' tid='30' class='m'>booAttr</a> <a id='31' tid='32' class='m'>=</a> <a id='33' tid='34' class='m'>42</a>;
+  }
+
+  <a id='1' tid='2' class='m'>Boo</a>.<a id='3' tid='4' class='m'>prototype</a>.<a id='5' tid='6' class='m'>fun</a> <a id='7' tid='8' class='m'>=</a> <a id='9' tid='10' class='m'>function</a>() {
+    <a id='11' tid='12' class='m'>console</a>.<a id='13' tid='14' class='m'>log</a>(<a id='15' tid='16' class='m'>&quot;Boo fun: &quot;</a> <a id='17' tid='18' class='m'>+</a> <a id='19' tid='20' class='m'>this</a>.<a id='21' tid='22' class='m'>booAttr</a>);
+  }
+
+  <span class='d'>function Foobar(arg) {
+    this.attr = arg;
+  }</span>
+  <span class='d'>Foobar.prototype = new Boo();</span>
+  //InheritFrom(Boo, Foobar);
+
+  <span class='d'>Foobar.prototype.myMethod</span> <span class='d'>=</span> <a id='101' tid='102' class='m'>function</a>(){
+    <a id='103' tid='104' class='m'>console</a>.<a id='105' tid='106' class='m'>log</a>(<a id='107' tid='108' class='m'>this</a>.<a id='109' tid='110' class='m'>attr</a>);
+  }
+
+  <span class='d'>f = new Foobar(&quot;parameter 1&quot;);</span>
+  <span class='d'>f.myMethod();</span>
+  <span class='d'>f.fun()</span>
+})()
+
+</pre>
+</div>
+<div id="right" class="src">
+<pre>
+<a id='rightstart' tid='leftstart'></a>
+<a id='36' tid='35' class='m'>var</a> <a id='38' tid='37' class='m'>InheritFrom</a> <a id='40' tid='39' class='m'>=</a> <a id='42' tid='41' class='m'>function</a>(<a id='44' tid='43' class='m'>superClass</a>, <a id='46' tid='45' class='m'>subClass</a>) {
+  <a id='48' tid='47' class='m'>function</a> <a id='50' tid='49' class='m'>inheritance</a>() { }
+  <a id='52' tid='51' class='m'>inheritance</a>.<a id='54' tid='53' class='m'>prototype</a> <a id='56' tid='55' class='m'>=</a> <a id='58' tid='57' class='m'>superClass</a>.<a id='60' tid='59' class='m'>prototype</a>;
+  
+  <a id='62' tid='61' class='m'>subClass</a>.<a id='64' tid='63' class='m'>prototype</a> <a id='66' tid='65' class='m'>=</a> <a id='68' tid='67' class='m'>new</a> <a id='70' tid='69' class='m'>inheritance</a>();
+  <a id='72' tid='71' class='m'>subClass</a>.<a id='74' tid='73' class='m'>prototype</a>.<a id='76' tid='75' class='m'>constructor</a> <a id='78' tid='77' class='m'>=</a> <a id='80' tid='79' class='m'>subClass</a>;
+  <a id='82' tid='81' class='m'>subClass</a>.<a id='84' tid='83' class='m'>baseConstructor</a> <a id='86' tid='85' class='m'>=</a> <a id='88' tid='87' class='m'>superClass</a>;
+  <a id='90' tid='89' class='m'>subClass</a>.<a id='92' tid='91' class='m'>prototype</a>.<a id='94' tid='93' class='m'>superClass</a> <a id='96' tid='95' class='m'>=</a> <a id='98' tid='97' class='m'>superClass</a>.<a id='100' tid='99' class='m'>prototype</a>;
+};
+
+
+(<span class='i'>function</span> <span class='i'>foo2</span>() {
+  <span class='i'>var foo = 1;</span>
+  <span class='i'>var coo = 42;</span>
+  <span class='i'>var doo = &quot;bar&quot;;</span>
+
+
+  <span class='i'>function Foo2Bar(arg) {
+    this.attr = arg;
+  }</span>
+  <span class='i'>Foo2Bar.prototype = new Boo();</span>
+  //InheritFrom(Boo, Foo2Bar);
+
+  <span class='i'>Foo2Bar.prototype.myMethod</span> <span class='i'>=</span> <a id='102' tid='101' class='m'>function</a>(){
+    <a id='104' tid='103' class='m'>console</a>.<a id='106' tid='105' class='m'>log</a>(<a id='108' tid='107' class='m'>this</a>.<a id='110' tid='109' class='m'>attr</a>);
+  }
+
+  <span class='i'>f = new Foo2Bar(&quot;parameter 1&quot;);</span>
+  <span class='i'>f.myMethod();</span>
+  <span class='i'>f.fun()</span>
+
+  <a id='24' tid='23' class='m'>function</a> <a id='26' tid='25' class='m'>Boo</a>() {
+    <a id='28' tid='27' class='m'>this</a>.<a id='30' tid='29' class='m'>booAttr</a> <a id='32' tid='31' class='m'>=</a> <a id='34' tid='33' class='m'>42</a>;
+  }
+
+  // New comment.
+  <a id='2' tid='1' class='m'>Boo</a>.<a id='4' tid='3' class='m'>prototype</a>.<a id='6' tid='5' class='m'>fun</a> <a id='8' tid='7' class='m'>=</a> <a id='10' tid='9' class='m'>function</a>() {
+    /* Another neq comment
+     * multiline.
+     */
+    <a id='12' tid='11' class='m'>console</a>.<a id='14' tid='13' class='m'>log</a>(<a id='16' tid='15' class='m'>&quot;Boo fun: &quot;</a> <a id='18' tid='17' class='m'>+</a> <a id='20' tid='19' class='m'>this</a>.<a id='22' tid='21' class='m'>booAttr</a>);
+  }
+})()
+
+</pre>
+</div>
+</body>
+</html>
